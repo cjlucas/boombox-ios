@@ -1,0 +1,25 @@
+//
+//  Boombox.h
+//  Boombox
+//
+//  Created by Christopher Lucas on 6/6/15.
+//  Copyright (c) 2015 Christopher Lucas. All rights reserved.
+//
+
+#import <Cocoa/Cocoa.h>
+
+//! Project version number for Boombox.
+FOUNDATION_EXPORT double BoomboxVersionNumber;
+
+//! Project version string for Boombox.
+FOUNDATION_EXPORT const unsigned char BoomboxVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <Boombox/PublicHeader.h>
+
+
+#import "BBXPlayer.h"
+#import "BBXAudioHandler.h"
+#import "BBXAudioFileStreamHandler.h"
+#import "BBXAudioQueueBufferHandler.h"
+#import "BBXAudioQueueManager.h"
+#import "BBXFileAudioSource.h"

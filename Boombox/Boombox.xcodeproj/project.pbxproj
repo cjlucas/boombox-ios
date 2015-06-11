@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		832F3DDA1B23D62E0097E9BB /* BBXAudioQueueBufferHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 832F3DD81B23D62E0097E9BB /* BBXAudioQueueBufferHandler.h */; };
+		832F3DDB1B23D62E0097E9BB /* BBXAudioQueueBufferHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 832F3DD91B23D62E0097E9BB /* BBXAudioQueueBufferHandler.m */; };
+		832F3DDD1B23D7230097E9BB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 832F3DDC1B23D7230097E9BB /* AudioToolbox.framework */; };
+		832F3DE11B29333D0097E9BB /* BBXAudioSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 832F3DE01B29333D0097E9BB /* BBXAudioSource.h */; };
+		832F3DE41B2934F90097E9BB /* BBXFileAudioSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 832F3DE21B2934F90097E9BB /* BBXFileAudioSource.h */; };
+		832F3DE51B2934F90097E9BB /* BBXFileAudioSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 832F3DE31B2934F90097E9BB /* BBXFileAudioSource.m */; };
+		832F3DE81B2937B10097E9BB /* BBXAudioQueueManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 832F3DE61B2937B10097E9BB /* BBXAudioQueueManager.h */; };
+		832F3DE91B2937B10097E9BB /* BBXAudioQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 832F3DE71B2937B10097E9BB /* BBXAudioQueueManager.m */; };
+		83742B411B2373D000EEF9A3 /* Boombox.h in Headers */ = {isa = PBXBuildFile; fileRef = 83742B401B2373D000EEF9A3 /* Boombox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		83742B471B2373D000EEF9A3 /* Boombox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83742B3B1B2373D000EEF9A3 /* Boombox.framework */; };
+		83742B591B23740400EEF9A3 /* BBXPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 83742B571B23740400EEF9A3 /* BBXPlayer.h */; };
+		83742B5A1B23740400EEF9A3 /* BBXPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83742B581B23740400EEF9A3 /* BBXPlayer.m */; };
+		83742B651B23744600EEF9A3 /* BBXAudioHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 83742B5C1B23744600EEF9A3 /* BBXAudioHandler.h */; };
+		83742B661B23744600EEF9A3 /* BBXAudioHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 83742B5D1B23744600EEF9A3 /* BBXAudioHandler.m */; };
+		83742B681B23744600EEF9A3 /* BBXAudioFileStreamHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 83742B5E1B23744600EEF9A3 /* BBXAudioFileStreamHandler.h */; };
+		83742B691B23744600EEF9A3 /* BBXAudioFileStreamHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 83742B5F1B23744600EEF9A3 /* BBXAudioFileStreamHandler.m */; };
+		83742B6E1B23744600EEF9A3 /* vbuf.c in Sources */ = {isa = PBXBuildFile; fileRef = 83742B621B23744600EEF9A3 /* vbuf.c */; };
+		83742B701B23744600EEF9A3 /* vbuf.h in Headers */ = {isa = PBXBuildFile; fileRef = 83742B631B23744600EEF9A3 /* vbuf.h */; };
+		83742B731B2374B800EEF9A3 /* VBufTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83742B721B2374B800EEF9A3 /* VBufTests.m */; };
+		83742B761B23784800EEF9A3 /* BBXRunLoopMessageQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 83742B741B23784800EEF9A3 /* BBXRunLoopMessageQueue.h */; };
+		83742B771B23784800EEF9A3 /* BBXRunLoopMessageQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 83742B751B23784800EEF9A3 /* BBXRunLoopMessageQueue.m */; };
+		83742B781B23784800EEF9A3 /* BBXRunLoopMessageQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 83742B751B23784800EEF9A3 /* BBXRunLoopMessageQueue.m */; };
+		83742B801B237DBC00EEF9A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83742B7F1B237DBC00EEF9A3 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		83742B481B2373D000EEF9A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83742B321B2373D000EEF9A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83742B3A1B2373D000EEF9A3;
+			remoteInfo = Boombox;
+		};
+		83742B841B237DC600EEF9A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83742B321B2373D000EEF9A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83742B3A1B2373D000EEF9A3;
+			remoteInfo = Boombox;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		83742B7B1B237DBC00EEF9A3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		832F3DD81B23D62E0097E9BB /* BBXAudioQueueBufferHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBXAudioQueueBufferHandler.h; sourceTree = "<group>"; };
+		832F3DD91B23D62E0097E9BB /* BBXAudioQueueBufferHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXAudioQueueBufferHandler.m; sourceTree = "<group>"; };
+		832F3DDC1B23D7230097E9BB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		832F3DE01B29333D0097E9BB /* BBXAudioSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBXAudioSource.h; sourceTree = "<group>"; };
+		832F3DE21B2934F90097E9BB /* BBXFileAudioSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBXFileAudioSource.h; sourceTree = "<group>"; };
+		832F3DE31B2934F90097E9BB /* BBXFileAudioSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXFileAudioSource.m; sourceTree = "<group>"; };
+		832F3DE61B2937B10097E9BB /* BBXAudioQueueManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBXAudioQueueManager.h; path = Boombox/BBXAudioQueueManager.h; sourceTree = "<group>"; };
+		832F3DE71B2937B10097E9BB /* BBXAudioQueueManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBXAudioQueueManager.m; path = Boombox/BBXAudioQueueManager.m; sourceTree = "<group>"; };
+		83742B3B1B2373D000EEF9A3 /* Boombox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Boombox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83742B3F1B2373D000EEF9A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83742B401B2373D000EEF9A3 /* Boombox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Boombox.h; sourceTree = "<group>"; };
+		83742B461B2373D000EEF9A3 /* BoomboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoomboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		83742B4C1B2373D000EEF9A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83742B4D1B2373D000EEF9A3 /* BoomboxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoomboxTests.m; sourceTree = "<group>"; };
+		83742B571B23740400EEF9A3 /* BBXPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBXPlayer.h; sourceTree = "<group>"; };
+		83742B581B23740400EEF9A3 /* BBXPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXPlayer.m; sourceTree = "<group>"; };
+		83742B5C1B23744600EEF9A3 /* BBXAudioHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBXAudioHandler.h; sourceTree = "<group>"; };
+		83742B5D1B23744600EEF9A3 /* BBXAudioHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXAudioHandler.m; sourceTree = "<group>"; };
+		83742B5E1B23744600EEF9A3 /* BBXAudioFileStreamHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBXAudioFileStreamHandler.h; sourceTree = "<group>"; };
+		83742B5F1B23744600EEF9A3 /* BBXAudioFileStreamHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXAudioFileStreamHandler.m; sourceTree = "<group>"; };
+		83742B601B23744600EEF9A3 /* FLACStreamHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLACStreamHandler.h; sourceTree = "<group>"; };
+		83742B611B23744600EEF9A3 /* FLACStreamHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLACStreamHandler.m; sourceTree = "<group>"; };
+		83742B621B23744600EEF9A3 /* vbuf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vbuf.c; sourceTree = "<group>"; };
+		83742B631B23744600EEF9A3 /* vbuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vbuf.h; sourceTree = "<group>"; };
+		83742B721B2374B800EEF9A3 /* VBufTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBufTests.m; sourceTree = "<group>"; };
+		83742B741B23784800EEF9A3 /* BBXRunLoopMessageQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBXRunLoopMessageQueue.h; sourceTree = "<group>"; };
+		83742B751B23784800EEF9A3 /* BBXRunLoopMessageQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXRunLoopMessageQueue.m; sourceTree = "<group>"; };
+		83742B7D1B237DBC00EEF9A3 /* BoomboxCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BoomboxCLI; sourceTree = BUILT_PRODUCTS_DIR; };
+		83742B7F1B237DBC00EEF9A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		83742B371B2373D000EEF9A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				832F3DDD1B23D7230097E9BB /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83742B431B2373D000EEF9A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83742B471B2373D000EEF9A3 /* Boombox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83742B7A1B237DBC00EEF9A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		83742B311B2373D000EEF9A3 = {
+			isa = PBXGroup;
+			children = (
+				832F3DE61B2937B10097E9BB /* BBXAudioQueueManager.h */,
+				832F3DE71B2937B10097E9BB /* BBXAudioQueueManager.m */,
+				832F3DDC1B23D7230097E9BB /* AudioToolbox.framework */,
+				83742B3D1B2373D000EEF9A3 /* Boombox */,
+				83742B4A1B2373D000EEF9A3 /* BoomboxTests */,
+				83742B7E1B237DBC00EEF9A3 /* BoomboxCLI */,
+				83742B3C1B2373D000EEF9A3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		83742B3C1B2373D000EEF9A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83742B3B1B2373D000EEF9A3 /* Boombox.framework */,
+				83742B461B2373D000EEF9A3 /* BoomboxTests.xctest */,
+				83742B7D1B237DBC00EEF9A3 /* BoomboxCLI */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		83742B3D1B2373D000EEF9A3 /* Boombox */ = {
+			isa = PBXGroup;
+			children = (
+				83742B5C1B23744600EEF9A3 /* BBXAudioHandler.h */,
+				83742B5D1B23744600EEF9A3 /* BBXAudioHandler.m */,
+				83742B5E1B23744600EEF9A3 /* BBXAudioFileStreamHandler.h */,
+				83742B5F1B23744600EEF9A3 /* BBXAudioFileStreamHandler.m */,
+				83742B601B23744600EEF9A3 /* FLACStreamHandler.h */,
+				83742B611B23744600EEF9A3 /* FLACStreamHandler.m */,
+				83742B621B23744600EEF9A3 /* vbuf.c */,
+				83742B631B23744600EEF9A3 /* vbuf.h */,
+				83742B401B2373D000EEF9A3 /* Boombox.h */,
+				83742B571B23740400EEF9A3 /* BBXPlayer.h */,
+				83742B581B23740400EEF9A3 /* BBXPlayer.m */,
+				83742B3E1B2373D000EEF9A3 /* Supporting Files */,
+				83742B741B23784800EEF9A3 /* BBXRunLoopMessageQueue.h */,
+				83742B751B23784800EEF9A3 /* BBXRunLoopMessageQueue.m */,
+				832F3DD81B23D62E0097E9BB /* BBXAudioQueueBufferHandler.h */,
+				832F3DD91B23D62E0097E9BB /* BBXAudioQueueBufferHandler.m */,
+				832F3DE01B29333D0097E9BB /* BBXAudioSource.h */,
+				832F3DE21B2934F90097E9BB /* BBXFileAudioSource.h */,
+				832F3DE31B2934F90097E9BB /* BBXFileAudioSource.m */,
+			);
+			path = Boombox;
+			sourceTree = "<group>";
+		};
+		83742B3E1B2373D000EEF9A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83742B3F1B2373D000EEF9A3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83742B4A1B2373D000EEF9A3 /* BoomboxTests */ = {
+			isa = PBXGroup;
+			children = (
+				83742B721B2374B800EEF9A3 /* VBufTests.m */,
+				83742B4D1B2373D000EEF9A3 /* BoomboxTests.m */,
+				83742B4B1B2373D000EEF9A3 /* Supporting Files */,
+			);
+			path = BoomboxTests;
+			sourceTree = "<group>";
+		};
+		83742B4B1B2373D000EEF9A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83742B4C1B2373D000EEF9A3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83742B7E1B237DBC00EEF9A3 /* BoomboxCLI */ = {
+			isa = PBXGroup;
+			children = (
+				83742B7F1B237DBC00EEF9A3 /* main.m */,
+			);
+			path = BoomboxCLI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		83742B381B2373D000EEF9A3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83742B681B23744600EEF9A3 /* BBXAudioFileStreamHandler.h in Headers */,
+				83742B591B23740400EEF9A3 /* BBXPlayer.h in Headers */,
+				83742B651B23744600EEF9A3 /* BBXAudioHandler.h in Headers */,
+				832F3DDA1B23D62E0097E9BB /* BBXAudioQueueBufferHandler.h in Headers */,
+				832F3DE41B2934F90097E9BB /* BBXFileAudioSource.h in Headers */,
+				83742B411B2373D000EEF9A3 /* Boombox.h in Headers */,
+				832F3DE81B2937B10097E9BB /* BBXAudioQueueManager.h in Headers */,
+				832F3DE11B29333D0097E9BB /* BBXAudioSource.h in Headers */,
+				83742B701B23744600EEF9A3 /* vbuf.h in Headers */,
+				83742B761B23784800EEF9A3 /* BBXRunLoopMessageQueue.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		83742B3A1B2373D000EEF9A3 /* Boombox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83742B511B2373D000EEF9A3 /* Build configuration list for PBXNativeTarget "Boombox" */;
+			buildPhases = (
+				83742B361B2373D000EEF9A3 /* Sources */,
+				83742B371B2373D000EEF9A3 /* Frameworks */,
+				83742B381B2373D000EEF9A3 /* Headers */,
+				83742B391B2373D000EEF9A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Boombox;
+			productName = Boombox;
+			productReference = 83742B3B1B2373D000EEF9A3 /* Boombox.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		83742B451B2373D000EEF9A3 /* BoomboxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83742B541B2373D000EEF9A3 /* Build configuration list for PBXNativeTarget "BoomboxTests" */;
+			buildPhases = (
+				83742B421B2373D000EEF9A3 /* Sources */,
+				83742B431B2373D000EEF9A3 /* Frameworks */,
+				83742B441B2373D000EEF9A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83742B491B2373D000EEF9A3 /* PBXTargetDependency */,
+			);
+			name = BoomboxTests;
+			productName = BoomboxTests;
+			productReference = 83742B461B2373D000EEF9A3 /* BoomboxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		83742B7C1B237DBC00EEF9A3 /* BoomboxCLI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83742B811B237DBC00EEF9A3 /* Build configuration list for PBXNativeTarget "BoomboxCLI" */;
+			buildPhases = (
+				83742B791B237DBC00EEF9A3 /* Sources */,
+				83742B7A1B237DBC00EEF9A3 /* Frameworks */,
+				83742B7B1B237DBC00EEF9A3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83742B851B237DC600EEF9A3 /* PBXTargetDependency */,
+			);
+			name = BoomboxCLI;
+			productName = BoomboxCLI;
+			productReference = 83742B7D1B237DBC00EEF9A3 /* BoomboxCLI */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83742B321B2373D000EEF9A3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Christopher Lucas";
+				TargetAttributes = {
+					83742B3A1B2373D000EEF9A3 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					83742B451B2373D000EEF9A3 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					83742B7C1B237DBC00EEF9A3 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+				};
+			};
+			buildConfigurationList = 83742B351B2373D000EEF9A3 /* Build configuration list for PBXProject "Boombox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 83742B311B2373D000EEF9A3;
+			productRefGroup = 83742B3C1B2373D000EEF9A3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				83742B3A1B2373D000EEF9A3 /* Boombox */,
+				83742B451B2373D000EEF9A3 /* BoomboxTests */,
+				83742B7C1B237DBC00EEF9A3 /* BoomboxCLI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		83742B391B2373D000EEF9A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83742B441B2373D000EEF9A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		83742B361B2373D000EEF9A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				832F3DE51B2934F90097E9BB /* BBXFileAudioSource.m in Sources */,
+				832F3DDB1B23D62E0097E9BB /* BBXAudioQueueBufferHandler.m in Sources */,
+				83742B661B23744600EEF9A3 /* BBXAudioHandler.m in Sources */,
+				83742B6E1B23744600EEF9A3 /* vbuf.c in Sources */,
+				83742B5A1B23740400EEF9A3 /* BBXPlayer.m in Sources */,
+				83742B691B23744600EEF9A3 /* BBXAudioFileStreamHandler.m in Sources */,
+				83742B771B23784800EEF9A3 /* BBXRunLoopMessageQueue.m in Sources */,
+				832F3DE91B2937B10097E9BB /* BBXAudioQueueManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83742B421B2373D000EEF9A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83742B781B23784800EEF9A3 /* BBXRunLoopMessageQueue.m in Sources */,
+				83742B731B2374B800EEF9A3 /* VBufTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83742B791B237DBC00EEF9A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83742B801B237DBC00EEF9A3 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		83742B491B2373D000EEF9A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83742B3A1B2373D000EEF9A3 /* Boombox */;
+			targetProxy = 83742B481B2373D000EEF9A3 /* PBXContainerItemProxy */;
+		};
+		83742B851B237DC600EEF9A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83742B3A1B2373D000EEF9A3 /* Boombox */;
+			targetProxy = 83742B841B237DC600EEF9A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		83742B4F1B2373D000EEF9A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		83742B501B2373D000EEF9A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		83742B521B2373D000EEF9A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Boombox/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		83742B531B2373D000EEF9A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Boombox/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		83742B551B2373D000EEF9A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BoomboxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		83742B561B2373D000EEF9A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BoomboxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		83742B821B237DBC00EEF9A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		83742B831B237DBC00EEF9A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		83742B351B2373D000EEF9A3 /* Build configuration list for PBXProject "Boombox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83742B4F1B2373D000EEF9A3 /* Debug */,
+				83742B501B2373D000EEF9A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83742B511B2373D000EEF9A3 /* Build configuration list for PBXNativeTarget "Boombox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83742B521B2373D000EEF9A3 /* Debug */,
+				83742B531B2373D000EEF9A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83742B541B2373D000EEF9A3 /* Build configuration list for PBXNativeTarget "BoomboxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83742B551B2373D000EEF9A3 /* Debug */,
+				83742B561B2373D000EEF9A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83742B811B237DBC00EEF9A3 /* Build configuration list for PBXNativeTarget "BoomboxCLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83742B821B237DBC00EEF9A3 /* Debug */,
+				83742B831B237DBC00EEF9A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83742B321B2373D000EEF9A3 /* Project object */;
+}
