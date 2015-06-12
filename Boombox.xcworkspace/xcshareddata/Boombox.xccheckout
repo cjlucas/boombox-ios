@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6A891708-B9E0-446E-B59C-9F4461C6A960</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Boombox</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>11B91B95EA17B2E405D9E23C63E78F84A988304A</key>
+		<string>github.com:cjlucas/boombox-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Boombox.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>11B91B95EA17B2E405D9E23C63E78F84A988304A</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:cjlucas/boombox-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>11B91B95EA17B2E405D9E23C63E78F84A988304A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>11B91B95EA17B2E405D9E23C63E78F84A988304A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>boombox-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>

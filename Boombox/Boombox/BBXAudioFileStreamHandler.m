@@ -60,14 +60,6 @@ void audioFileHandlerPacketProc(void *inClientData, UInt32 numBytes, UInt32 numP
             if (AudioFileStreamGetProperty(afsid, propid, &asbdSize, &asbd)) {
                 printf("Failed to get data format\n");
             } else if (self.delegate != nil) {
-                asbd.mFormatID = kAudioFormatLinearPCM;
-                asbd.mSampleRate = 44100;
-                asbd.mFramesPerPacket = 1;
-                asbd.mChannelsPerFrame = 2;
-                asbd.mBytesPerFrame = 4;
-                asbd.mBytesPerPacket = 4;
-                asbd.mBitsPerChannel = 16;
-                asbd.mFormatFlags |= kLinearPCMFormatFlagIsSignedInteger;
                 [self.delegate onBasicDescriptionAvailable:self audioDescription:asbd];
             }
             break;
