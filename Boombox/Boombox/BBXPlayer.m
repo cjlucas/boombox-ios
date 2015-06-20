@@ -8,46 +8,63 @@
 
 #import "BBXPlayer.h"
 
-#import "BBXAudioHandler.h"
-#import "BBXRunLoopMessageQueue.h"
+#import "BBXFileAudioSource.h"
 
-@implementation BBXPlayer {
-    BBXAudioHandler *currentHandler;
-    BBXRunLoopMessageQueue *msgQueue;
-    NSThread *thread;
-}
+@interface BBXPlayer ()
+
+@property BBXAudioQueueManager *queueManager;
+
+@end
+
+@implementation BBXPlayer
 
 - (instancetype)init
 {
-    msgQueue = [[BBXRunLoopMessageQueue alloc] init];
+    self = [super init];
+    if (self == nil) {
+        return nil;
+    }
+    
+    _queueManager = [[BBXAudioQueueManager alloc] init];
     return self;
 }
 
-- (BOOL)start
+- (void)addURL:(NSURL *)url
 {
-    if (thread == nil) {
-        thread = [[NSThread alloc] initWithTarget:self selector:@selector(runForever:) object:nil];
-        [thread start];
-        return thread.executing;
-    } else {
-        return NO;
-    }
+    BBXFileAudioSource *src = [[BBXFileAudioSource alloc] initWithURL:url];
+    [self.queueManager addAudioSource:src];
 }
 
-- (void)runForever:(id)thing
+- (void)play
 {
-    while (true) {
-        printf("rawr");
-        switch ([msgQueue pull]) {
-            case BBXPlayRequested:
-                break;
-            case BBXPauseRequested:
-                break;
-            case BBXNoMessage:
-                break;
-        }
-        usleep(100000);
-    }
+    [self.queueManager play];
+}
+
+- (void)pause
+{
+    [self.queueManager pause];
+}
+
+- (void)next
+{
+    [self.queueManager reset];
+}
+
+#pragma mark - BBXAudioQueueManagerDelegate
+
+- (void)audioQueueManager:(BBXAudioQueueManager * __nonnull)manager didStartPlayingSource:(id<BBXAudioSource> __nonnull)source
+{
+    
+}
+
+- (void)audioQueueManager:(BBXAudioQueueManager * __nonnull)manager didFinishPlayingSource:(id<BBXAudioSource> __nonnull)source
+{
+    
+}
+
+- (void)audioQueueManagerDidStop:(BBXAudioQueueManager * __nonnull)manager
+{
+    
 }
 
 @end

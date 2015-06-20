@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Christopher Lucas. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
 #import "BBXAudioSource.h"
 

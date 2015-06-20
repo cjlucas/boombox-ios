@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BBXPlayer : NSObject
+#import "BBXAudioQueueManager.h"
 
-- (BOOL)start;
+@interface BBXPlayer : NSObject <BBXAudioQueueManagerDelegate>
 
+- (void)addURL:(NSURL *)url;
+- (void)play;
+- (void)pause;
+- (void)next;
 @end

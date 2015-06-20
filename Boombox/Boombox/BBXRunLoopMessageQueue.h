@@ -10,8 +10,14 @@
 
 typedef NS_ENUM(NSInteger, BBXRunLoopMessage) {
     BBXNoMessage,
+    BBXPlaying,
+    BBXPaused,
     BBXPlayRequested,
     BBXPauseRequested,
+    BBXStopRequested,
+    BBXResetRequested,
+    BBXAudioSourceAvailable,
+    BBXReachedEndOfAudioSource,
 };
 
 @interface BBXRunLoopMessageQueue : NSObject {

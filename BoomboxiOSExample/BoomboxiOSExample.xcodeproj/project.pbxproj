@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		83470DF11B35004D008A8A9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83470DF01B35004D008A8A9C /* AppDelegate.swift */; };
+		83470DF31B35004D008A8A9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83470DF21B35004D008A8A9C /* ViewController.swift */; };
+		83470DF61B35004D008A8A9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83470DF41B35004D008A8A9C /* Main.storyboard */; };
+		83470DF81B35004D008A8A9C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83470DF71B35004D008A8A9C /* Images.xcassets */; };
+		83470DFB1B35004D008A8A9C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83470DF91B35004D008A8A9C /* LaunchScreen.xib */; };
+		83470E071B35004D008A8A9C /* BoomboxiOSExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83470E061B35004D008A8A9C /* BoomboxiOSExampleTests.swift */; };
+		83470E111B350063008A8A9C /* Boombox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83470E101B350063008A8A9C /* Boombox.framework */; };
+		83470E151B35027B008A8A9C /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83470E131B35027B008A8A9C /* 1.mp3 */; };
+		83470E161B35027B008A8A9C /* 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83470E141B35027B008A8A9C /* 2.mp3 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		83470E011B35004D008A8A9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83470DE31B35004D008A8A9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83470DEA1B35004D008A8A9C;
+			remoteInfo = BoomboxiOSExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		83470DEB1B35004D008A8A9C /* BoomboxiOSExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoomboxiOSExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		83470DEF1B35004D008A8A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83470DF01B35004D008A8A9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		83470DF21B35004D008A8A9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		83470DF51B35004D008A8A9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		83470DF71B35004D008A8A9C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		83470DFA1B35004D008A8A9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		83470E001B35004D008A8A9C /* BoomboxiOSExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoomboxiOSExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		83470E051B35004D008A8A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83470E061B35004D008A8A9C /* BoomboxiOSExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoomboxiOSExampleTests.swift; sourceTree = "<group>"; };
+		83470E101B350063008A8A9C /* Boombox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Boombox.framework; path = "../../../Library/Developer/Xcode/DerivedData/Boombox-boibtqnyfgwsuhfgiogzbizcagxh/Build/Products/Debug/Boombox.framework"; sourceTree = "<group>"; };
+		83470E131B35027B008A8A9C /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 1.mp3; path = ../../../Downloads/1.mp3; sourceTree = "<group>"; };
+		83470E141B35027B008A8A9C /* 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 2.mp3; path = ../../../Downloads/2.mp3; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		83470DE81B35004D008A8A9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83470E111B350063008A8A9C /* Boombox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83470DFD1B35004D008A8A9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		83470DE21B35004D008A8A9C = {
+			isa = PBXGroup;
+			children = (
+				83470E121B35021F008A8A9C /* Resources */,
+				83470E101B350063008A8A9C /* Boombox.framework */,
+				83470DED1B35004D008A8A9C /* BoomboxiOSExample */,
+				83470E031B35004D008A8A9C /* BoomboxiOSExampleTests */,
+				83470DEC1B35004D008A8A9C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		83470DEC1B35004D008A8A9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83470DEB1B35004D008A8A9C /* BoomboxiOSExample.app */,
+				83470E001B35004D008A8A9C /* BoomboxiOSExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		83470DED1B35004D008A8A9C /* BoomboxiOSExample */ = {
+			isa = PBXGroup;
+			children = (
+				83470DF01B35004D008A8A9C /* AppDelegate.swift */,
+				83470DF21B35004D008A8A9C /* ViewController.swift */,
+				83470DF41B35004D008A8A9C /* Main.storyboard */,
+				83470DF71B35004D008A8A9C /* Images.xcassets */,
+				83470DF91B35004D008A8A9C /* LaunchScreen.xib */,
+				83470DEE1B35004D008A8A9C /* Supporting Files */,
+			);
+			path = BoomboxiOSExample;
+			sourceTree = "<group>";
+		};
+		83470DEE1B35004D008A8A9C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83470DEF1B35004D008A8A9C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83470E031B35004D008A8A9C /* BoomboxiOSExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				83470E061B35004D008A8A9C /* BoomboxiOSExampleTests.swift */,
+				83470E041B35004D008A8A9C /* Supporting Files */,
+			);
+			path = BoomboxiOSExampleTests;
+			sourceTree = "<group>";
+		};
+		83470E041B35004D008A8A9C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83470E051B35004D008A8A9C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83470E121B35021F008A8A9C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				83470E131B35027B008A8A9C /* 1.mp3 */,
+				83470E141B35027B008A8A9C /* 2.mp3 */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		83470DEA1B35004D008A8A9C /* BoomboxiOSExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83470E0A1B35004D008A8A9C /* Build configuration list for PBXNativeTarget "BoomboxiOSExample" */;
+			buildPhases = (
+				83470DE71B35004D008A8A9C /* Sources */,
+				83470DE81B35004D008A8A9C /* Frameworks */,
+				83470DE91B35004D008A8A9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BoomboxiOSExample;
+			productName = BoomboxiOSExample;
+			productReference = 83470DEB1B35004D008A8A9C /* BoomboxiOSExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		83470DFF1B35004D008A8A9C /* BoomboxiOSExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83470E0D1B35004D008A8A9C /* Build configuration list for PBXNativeTarget "BoomboxiOSExampleTests" */;
+			buildPhases = (
+				83470DFC1B35004D008A8A9C /* Sources */,
+				83470DFD1B35004D008A8A9C /* Frameworks */,
+				83470DFE1B35004D008A8A9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83470E021B35004D008A8A9C /* PBXTargetDependency */,
+			);
+			name = BoomboxiOSExampleTests;
+			productName = BoomboxiOSExampleTests;
+			productReference = 83470E001B35004D008A8A9C /* BoomboxiOSExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83470DE31B35004D008A8A9C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Christopher Lucas";
+				TargetAttributes = {
+					83470DEA1B35004D008A8A9C = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					83470DFF1B35004D008A8A9C = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 83470DEA1B35004D008A8A9C;
+					};
+				};
+			};
+			buildConfigurationList = 83470DE61B35004D008A8A9C /* Build configuration list for PBXProject "BoomboxiOSExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83470DE21B35004D008A8A9C;
+			productRefGroup = 83470DEC1B35004D008A8A9C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				83470DEA1B35004D008A8A9C /* BoomboxiOSExample */,
+				83470DFF1B35004D008A8A9C /* BoomboxiOSExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		83470DE91B35004D008A8A9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83470E151B35027B008A8A9C /* 1.mp3 in Resources */,
+				83470DF61B35004D008A8A9C /* Main.storyboard in Resources */,
+				83470E161B35027B008A8A9C /* 2.mp3 in Resources */,
+				83470DFB1B35004D008A8A9C /* LaunchScreen.xib in Resources */,
+				83470DF81B35004D008A8A9C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83470DFE1B35004D008A8A9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		83470DE71B35004D008A8A9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83470DF31B35004D008A8A9C /* ViewController.swift in Sources */,
+				83470DF11B35004D008A8A9C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83470DFC1B35004D008A8A9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83470E071B35004D008A8A9C /* BoomboxiOSExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		83470E021B35004D008A8A9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83470DEA1B35004D008A8A9C /* BoomboxiOSExample */;
+			targetProxy = 83470E011B35004D008A8A9C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		83470DF41B35004D008A8A9C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83470DF51B35004D008A8A9C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		83470DF91B35004D008A8A9C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83470DFA1B35004D008A8A9C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		83470E081B35004D008A8A9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		83470E091B35004D008A8A9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		83470E0B1B35004D008A8A9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Boombox-boibtqnyfgwsuhfgiogzbizcagxh/Build/Products/Debug",
+				);
+				INFOPLIST_FILE = BoomboxiOSExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		83470E0C1B35004D008A8A9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Boombox-boibtqnyfgwsuhfgiogzbizcagxh/Build/Products/Debug",
+				);
+				INFOPLIST_FILE = BoomboxiOSExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		83470E0E1B35004D008A8A9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BoomboxiOSExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoomboxiOSExample.app/BoomboxiOSExample";
+			};
+			name = Debug;
+		};
+		83470E0F1B35004D008A8A9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BoomboxiOSExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoomboxiOSExample.app/BoomboxiOSExample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		83470DE61B35004D008A8A9C /* Build configuration list for PBXProject "BoomboxiOSExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83470E081B35004D008A8A9C /* Debug */,
+				83470E091B35004D008A8A9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83470E0A1B35004D008A8A9C /* Build configuration list for PBXNativeTarget "BoomboxiOSExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83470E0B1B35004D008A8A9C /* Debug */,
+				83470E0C1B35004D008A8A9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		83470E0D1B35004D008A8A9C /* Build configuration list for PBXNativeTarget "BoomboxiOSExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83470E0E1B35004D008A8A9C /* Debug */,
+				83470E0F1B35004D008A8A9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83470DE31B35004D008A8A9C /* Project object */;
+}

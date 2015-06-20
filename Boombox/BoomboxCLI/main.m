@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <Boombox/Boombox.h>
 
+bool playing = false;
+
 int main(int argc, const char * argv[]) {
     // insert code here...
 //    NSLog(@"Hello, World!");
@@ -53,7 +55,10 @@ int main(int argc, const char * argv[]) {
         [m addAudioSource:src];
     }
 
-    [m doit];
+    
+//    while (true) { playing ? [m stop] : [m play]; playing = !playing; sleep(2); };
+    [m play];
+    while (true) { sleep(5); }
     
     return 0;
 }

@@ -9,26 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 
-#define NUM_AUDIO_BUFFERS (1 << 2)
-#define AUDIO_BUFFER_SIZE (1 << 16)
-
-void audioHandlerAudioQueueCallback(void *in, AudioQueueRef aq, AudioQueueBufferRef buf);
-
-@class BBXAudioHandler;
+@protocol BBXAudioHandler;
 
 @protocol BBXAudioHandlerDelegate <NSObject>
-- (void)onAvailableData:(BBXAudioHandler *)handler data:(void *)bytes numBytes:(UInt32)numBytes numPacketDescs:(UInt32)numPacketDescs packetDescs:(AudioStreamPacketDescription *)packetDescs;
-- (void)onBasicDescriptionAvailable:(BBXAudioHandler *)handler audioDescription:(AudioStreamBasicDescription)desc;
+- (void)onAvailableData:(id <BBXAudioHandler>)handler data:(void *)bytes numBytes:(UInt32)numBytes numPacketDescs:(UInt32)numPacketDescs packetDescs:(AudioStreamPacketDescription *)packetDescs;
+- (void)onBasicDescriptionAvailable:(id <BBXAudioHandler>)handler audioDescription:(AudioStreamBasicDescription)desc;
 @end
 
-@interface BBXAudioHandler : NSObject {
-    AudioStreamBasicDescription asbd;
-}
+@protocol BBXAudioHandler <NSObject>
 
-@property (readonly) BOOL done;
-@property (weak) id<BBXAudioHandlerDelegate> delegate;
-
-- (instancetype)init;
+- (instancetype)initWithDelegate:(id <BBXAudioHandlerDelegate>)delegate;
 - (void)feedData:(void *)buf ofSize:(size_t)bufSize;
 - (void)dispose;
+
 @end

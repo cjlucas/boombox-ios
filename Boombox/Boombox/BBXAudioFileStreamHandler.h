@@ -8,9 +8,12 @@
 
 #import "BBXAudioHandler.h"
 
-@interface BBXAudioFileStreamHandler : BBXAudioHandler {
+@interface BBXAudioFileStreamHandler : NSObject <BBXAudioHandler> {
     AudioFileStreamID audioFileStreamId;
+    AudioStreamBasicDescription asbd;
 }
+
+@property (weak) id <BBXAudioHandlerDelegate> delegate;
 
 - (void)onProperty:(AudioFileStreamID)afsid propId:(AudioFileStreamPropertyID)propid flags:(UInt32 *)ioFlags;
 - (void)onPacket:(UInt32)numbytes numPackets:(UInt32)numPackets data:(const void *)data packetDescs:(AudioStreamPacketDescription *)packetDescs;

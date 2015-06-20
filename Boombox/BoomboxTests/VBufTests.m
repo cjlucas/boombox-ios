@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Christopher Lucas. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
 #import "vbuf.h"
 
