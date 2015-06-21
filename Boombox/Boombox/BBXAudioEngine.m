@@ -16,7 +16,7 @@
 
 @interface BBXAudioEngine ()
 
-@property BBXAudioQueueBufferManager *queueBufferHandler;
+@property BBXAudioQueueBufferManager *queueBufferManager;
 @property id <BBXAudioHandler> audioHandler;
 @property BBXRunLoopMessageQueue *messageQueue;
 @property NSMutableArray *queuedSources;
@@ -55,7 +55,7 @@
 
 - (void)onAvailableData:(id <BBXAudioHandler>)handler data:(void *)bytes numBytes:(UInt32)numBytes numPacketDescs:(UInt32)numPacketDescs packetDescs:(AudioStreamPacketDescription *)packetDescs
 {
-    if ([self.queueBufferHandler addDataToQueue:audioQueue bytes:bytes ofSize:numBytes withPacketDescriptions:packetDescs numPackets:numPacketDescs] && self.audioQueueState == BBXAudioQueueInitialized) {
+    if ([self.queueBufferManager addDataToQueue:audioQueue bytes:bytes ofSize:numBytes withPacketDescriptions:packetDescs numPackets:numPacketDescs] && self.audioQueueState == BBXAudioQueueInitialized) {
         AudioQueueStart(audioQueue, NULL);
         _audioQueueState = BBXAudioQueueStarted;
         [self.delegate audioEngine:self didStartPlayingSource:self.currentAudioSource];
@@ -66,15 +66,15 @@
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        self.queueBufferHandler = [[BBXAudioQueueBufferManager alloc] init];
+        self.queueBufferManager = [[BBXAudioQueueBufferManager alloc] init];
         
-        if (AudioQueueNewOutput(&desc, bbxAudioQueueOutputCallback, (__bridge void *)self.queueBufferHandler, NULL, 0, 0, &audioQueue)) {
+        if (AudioQueueNewOutput(&desc, bbxAudioQueueOutputCallback, (__bridge void *)self.queueBufferManager, NULL, 0, 0, &audioQueue)) {
             NSLog(@"failed to create new audio queue");
             return;
         }
        
         _audioQueueState = BBXAudioQueueInitialized;
-        [self.queueBufferHandler allocateBuffersWithQueue:audioQueue numBuffers:1 << 2 andBufferSize:1 << 14];
+        [self.queueBufferManager allocateBuffersWithQueue:audioQueue numBuffers:1 << 2 andBufferSize:1 << 14];
     });
 }
 
@@ -126,7 +126,7 @@
     }
     
     if ([self.currentAudioSource reachedEndOfFile]) {
-        [self.queueBufferHandler enqueueRemainingData:audioQueue];
+        [self.queueBufferManager enqueueRemainingData:audioQueue];
         [self.messageQueue push:BBXReachedEndOfAudioSource];
     }
 }
@@ -151,7 +151,7 @@
                 
                 [self.audioHandler dispose];
                 self.audioHandler = nil;
-                [self.queueBufferHandler flush];
+                [self.queueBufferManager flush];
                 break;
             case BBXAudioSourceQueued:
                 if (self.currentAudioSource == nil) {
@@ -165,11 +165,12 @@
             case BBXNextRequested:
                 AudioQueueStop(audioQueue, YES);
                 _audioQueueState = BBXAudioQueueInitialized;
+                [self.queueBufferManager flush];
                 [self handleReachedEndOfAudioSource];
                 break;
             default:
                 if (self.currentAudioSource == nil || self.audioQueueState == BBXAudioQueuePaused) {
-                    usleep(50000);
+                    usleep(10000);
                     continue;
                 }
                 [self fillHandler];
@@ -210,6 +211,11 @@
 - (void)next
 {
     [self.messageQueue push:BBXNextRequested];
+}
+
+- (void)dealloc
+{
+    free(audioSourceBuf);
 }
 
 @end
