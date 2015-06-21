@@ -30,3 +30,5 @@ size_t vbuf_size(vbuf_t *buf);
 void vbuf_append(vbuf_t *buf, void *data, size_t data_sz);
 
 size_t vbuf_read(vbuf_t *buf, void *out, size_t bytes_want);
+
+void vbuf_flush(vbuf_t *buf);

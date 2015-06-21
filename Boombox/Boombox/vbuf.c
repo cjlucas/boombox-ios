@@ -65,3 +65,7 @@ size_t vbuf_read(vbuf_t *buf, void *out, size_t bytes_want) {
     
     return bytes_want;
 }
+
+void vbuf_flush(vbuf_t *buf) {
+    buf->data_pos = buf->data;
+}

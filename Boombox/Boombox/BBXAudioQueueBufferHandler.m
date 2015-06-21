@@ -20,7 +20,7 @@ void bbxAudioQueueOutputCallback(void *inUserData, AudioQueueRef inAQ, AudioQueu
 @interface BBXAudioQueueBufferHandler ()
 
 @property AudioQueueBufferRef *buffers;
-@property NSLock *buffersLock;
+@property NSRecursiveLock *buffersLock;
 @property size_t buffersCount;
 @property BOOL *buffersInUse;
 @property vbuf_t *dataBuf;
@@ -28,6 +28,7 @@ void bbxAudioQueueOutputCallback(void *inUserData, AudioQueueRef inAQ, AudioQueu
 @property AudioStreamPacketDescription *packetDescs;
 @property size_t packetDescsCount;
 @property UInt32 queueBufferCapacity;
+@property NSCondition *bufferAvailableCondition;
 
 - (AudioQueueBufferRef)getAvailableBuffer;
 - (BOOL)enqueueDataOntoQueue:(AudioQueueRef)audioQueue untilExhausted:(BOOL)doUntilExhausted;
@@ -43,7 +44,8 @@ void bbxAudioQueueOutputCallback(void *inUserData, AudioQueueRef inAQ, AudioQueu
         NSLog(@"HERE HH");
         _dataBuf = malloc(sizeof(vbuf_t));
         vbuf_init(_dataBuf, 1 << 16);
-        _buffersLock = [[NSLock alloc] init];
+        _buffersLock = [[NSRecursiveLock alloc] init];
+        _bufferAvailableCondition = [[NSCondition alloc] init];
     }
     
     return self;
@@ -78,15 +80,6 @@ void bbxAudioQueueOutputCallback(void *inUserData, AudioQueueRef inAQ, AudioQueu
         for (int i = 0; i < numPackets; i++) {
             self.packetDescs[self.numPackets + i] = descs[i];
         }
-    } else {
-        for (int i = 0; i < numPackets; i++) {
-//            AudioStreamPacketDescription desc = {
-//                .mStartOffset = 0,
-//                .mVariableFramesInPacket = 0,
-//                .mDataByteSize = 4,
-//            };
-//            self.packetDescs[self.numPackets + i] = desc;
-        }
     }
     
     self.numPackets += numPackets;
@@ -96,11 +89,7 @@ void bbxAudioQueueOutputCallback(void *inUserData, AudioQueueRef inAQ, AudioQueu
         return NO;
     }
     
-    AudioQueueBufferRef queueBuf;
-    do {
-        queueBuf = [self getAvailableBuffer];
-        usleep(100000);
-    } while (queueBuf == NULL);
+    AudioQueueBufferRef queueBuf = [self getAvailableBuffer];
     
     if (self.numPackets > 0 && self.packetDescs[0].mDataByteSize > 0 ) { // VBR
         UInt32 numPackets = 0;
@@ -148,26 +137,51 @@ void bbxAudioQueueOutputCallback(void *inUserData, AudioQueueRef inAQ, AudioQueu
     // TODO: implement me
 }
 
-- (AudioQueueBufferRef)getAvailableBuffer
+- (NSInteger)getAvailableBufferIndex
 {
     [self.buffersLock lock];
-    AudioQueueBufferRef buf = NULL;
     
     for (int i = 0; i < self.buffersCount; i++) {
         if (!self.buffersInUse[i]) {
-//            NSLog(@"getAvailBuffer %d", i);
-            self.buffersInUse[i] = YES;
-            buf = self.buffers[i];
-            break;
+            [self.buffersLock unlock];
+            return i;
         }
-        
     }
-   
+    
     [self.buffersLock unlock];
+    return -1;
+}
+
+- (AudioQueueBufferRef)getAvailableBuffer
+{
+    [self.buffersLock lock];
+    [self.bufferAvailableCondition lock];
+    NSInteger bufferIndex = [self getAvailableBufferIndex];
+    
+    while (bufferIndex == -1) {
+        [self.buffersLock unlock];
+        [self.bufferAvailableCondition wait];
+        [self.buffersLock lock];
+        bufferIndex = [self getAvailableBufferIndex];
+    }
+    
+    
+    self.buffersInUse[bufferIndex] = YES;
+
+    AudioQueueBufferRef buf = self.buffers[bufferIndex];
+  
+    [self.buffersLock unlock];
+    [self.bufferAvailableCondition unlock];
     return buf;
 }
 
-- (void)free {
+- (void)flush
+{
+    vbuf_flush(self.dataBuf);
+}
+
+- (void)dealloc
+{
     free(self.buffers);
     free(self.buffersInUse);
     vbuf_free(self.dataBuf);
@@ -187,7 +201,7 @@ void bbxAudioQueueOutputCallback(void *inUserData, AudioQueueRef inAQ, AudioQueu
         }
     }
     [self.buffersLock unlock];
-    
+    [self.bufferAvailableCondition signal];
 }
 
 @end

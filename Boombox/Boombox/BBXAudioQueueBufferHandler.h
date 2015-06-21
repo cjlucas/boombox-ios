@@ -18,7 +18,7 @@ void bbxAudioQueueOutputCallback(void *inUserData, AudioQueueRef inAQ, AudioQueu
 - (BOOL)addDataToQueue:(AudioQueueRef)audioQueue bytes:(void *)bytes ofSize:(UInt32)numBytes withPacketDescriptions:(AudioStreamPacketDescription *)descs numPackets:(UInt32)numPackets;
 
 - (void)enqueueRemainingData:(AudioQueueRef)audioQueue;
-- (void)free;
+- (void)flush;
 
 - (void)reuseAudioBuffer:(AudioQueueBufferRef)buffer;
 
