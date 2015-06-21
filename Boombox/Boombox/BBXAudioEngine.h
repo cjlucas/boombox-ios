@@ -1,5 +1,5 @@
 //
-//  BBXAudioQueueManager.h
+//  BBXAudioEngine.h
 //  Boombox
 //
 //  Created by Christopher Lucas on 6/10/15.
@@ -19,13 +19,13 @@ typedef NS_ENUM(NSInteger, BBXAudioQueueState) {
     BBXAudioQueuePaused,
 };
 
-@protocol BBXAudioQueueManagerDelegate;
+@protocol BBXAudioEngineDelegate;
 
-@interface BBXAudioQueueManager : NSObject <BBXAudioHandlerDelegate>
+@interface BBXAudioEngine : NSObject <BBXAudioHandlerDelegate>
 
 @property (readonly) __nullable id <BBXAudioSource> currentAudioSource;
 @property (readonly) BBXAudioQueueState audioQueueState;
-@property (weak) __nullable id <BBXAudioQueueManagerDelegate> delegate;
+@property (weak) __nullable id <BBXAudioEngineDelegate> delegate;
 
 - (void)queueAudioSource:(__nonnull id<BBXAudioSource>)source;
 - (void)play;
@@ -35,8 +35,8 @@ typedef NS_ENUM(NSInteger, BBXAudioQueueState) {
 
 @end
 
-@protocol BBXAudioQueueManagerDelegate
+@protocol BBXAudioEngineDelegate
 
-- (void)audioQueueManager:(BBXAudioQueueManager * __nonnull)manager didStartPlayingSource:(__nonnull id <BBXAudioSource>)source;
-- (void)audioQueueManager:(BBXAudioQueueManager * __nonnull)manager didFinishPlayingSource:(__nonnull id <BBXAudioSource>)source;
+- (void)audioEngine:(BBXAudioEngine * __nonnull)engine didStartPlayingSource:(__nonnull id <BBXAudioSource>)source;
+- (void)audioEngine:(BBXAudioEngine * __nonnull)engine didFinishPlayingSource:(__nonnull id <BBXAudioSource>)source;
 @end

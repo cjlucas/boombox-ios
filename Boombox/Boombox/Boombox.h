@@ -20,8 +20,8 @@ FOUNDATION_EXPORT const unsigned char BoomboxVersionString[];
 
 #import "BBXAudioHandler.h"
 #import "BBXAudioFileStreamHandler.h"
-#import "BBXAudioQueueBufferHandler.h"
-#import "BBXAudioQueueManager.h"
+#import "BBXAudioQueueBufferManager.h"
+#import "BBXAudioEngine.h"
 #import "BBXFileAudioSource.h"
 #import "BBXPlayer.h"
 #import "BBXPlaylist.h"

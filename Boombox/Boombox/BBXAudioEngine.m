@@ -1,22 +1,22 @@
 //
-//  BBXAudioQueueManager.m
+//  BBXAudioEngine.m
 //  Boombox
 //
 //  Created by Christopher Lucas on 6/10/15.
 //  Copyright (c) 2015 Christopher Lucas. All rights reserved.
 //
 
-#import "BBXAudioQueueManager.h"
+#import "BBXAudioEngine.h"
 
 #import "BBXAudioFileStreamHandler.h"
-#import "BBXAudioQueueBufferHandler.h"
+#import "BBXAudioQueueBufferManager.h"
 #import "BBXRunLoopMessageQueue.h"
 
 #define MAX_QUEUES 2
 
-@interface BBXAudioQueueManager ()
+@interface BBXAudioEngine ()
 
-@property BBXAudioQueueBufferHandler *queueBufferHandler;
+@property BBXAudioQueueBufferManager *queueBufferHandler;
 @property id <BBXAudioHandler> audioHandler;
 @property BBXRunLoopMessageQueue *messageQueue;
 @property NSMutableArray *queuedSources;
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation BBXAudioQueueManager {
+@implementation BBXAudioEngine {
     AudioQueueRef audioQueue;
     void *audioSourceBuf;
     size_t audioSourceBufSize;
@@ -58,7 +58,7 @@
     if ([self.queueBufferHandler addDataToQueue:audioQueue bytes:bytes ofSize:numBytes withPacketDescriptions:packetDescs numPackets:numPacketDescs] && self.audioQueueState == BBXAudioQueueInitialized) {
         AudioQueueStart(audioQueue, NULL);
         _audioQueueState = BBXAudioQueueStarted;
-        [self.delegate audioQueueManager:self didStartPlayingSource:self.currentAudioSource];
+        [self.delegate audioEngine:self didStartPlayingSource:self.currentAudioSource];
     }
 }
 
@@ -66,7 +66,7 @@
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        self.queueBufferHandler = [[BBXAudioQueueBufferHandler alloc] init];
+        self.queueBufferHandler = [[BBXAudioQueueBufferManager alloc] init];
         
         if (AudioQueueNewOutput(&desc, bbxAudioQueueOutputCallback, (__bridge void *)self.queueBufferHandler, NULL, 0, 0, &audioQueue)) {
             NSLog(@"failed to create new audio queue");
@@ -97,7 +97,7 @@
         _currentAudioSource = [self.queuedSources objectAtIndex:0];
         [self.queuedSources removeObjectAtIndex:0];
         self.audioHandler = [[BBXAudioFileStreamHandler alloc] initWithDelegate:self];
-        [self.delegate audioQueueManager:self didStartPlayingSource:self.currentAudioSource];
+        [self.delegate audioEngine:self didStartPlayingSource:self.currentAudioSource];
     }
     
     [self.queuedSourcesLock unlock];
@@ -115,7 +115,7 @@
 
 - (void)fillHandler
 {
-    // Don't pull data from source if we're paused. this is because the audio queue buffers will eventually fill, causing BBXAudioQueueBufferHandler's addDataToQueue:... to block
+    // Don't pull data from source if we're paused. this is because the audio queue buffers will eventually fill, causing BBXAudioQueueBufferManager's addDataToQueue:... to block
     if (self.audioQueueState == BBXAudioQueuePaused) {
         return;
     }
@@ -159,7 +159,7 @@
                 }
                 break;
             case BBXReachedEndOfAudioSource:
-                [self.delegate audioQueueManager:self didFinishPlayingSource:self.currentAudioSource];
+                [self.delegate audioEngine:self didFinishPlayingSource:self.currentAudioSource];
                 [self handleReachedEndOfAudioSource];
                 break;
             case BBXNextRequested:

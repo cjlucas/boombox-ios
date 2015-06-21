@@ -1,23 +1,23 @@
 //
-//  BBXAudioQueueBufferHandler.m
+//  BBXAudioQueueBufferManager.m
 //  Boombox
 //
 //  Created by Christopher Lucas on 6/6/15.
 //  Copyright (c) 2015 Christopher Lucas. All rights reserved.
 //
 
-#import "BBXAudioQueueBufferHandler.h"
+#import "BBXAudioQueueBufferManager.h"
 
 #import "vbuf.h"
 
 void bbxAudioQueueOutputCallback(void *inUserData, AudioQueueRef inAQ, AudioQueueBufferRef inBuffer)
 {
     NSLog(@"bbxAudioQueueOutputCallback");
-    BBXAudioQueueBufferHandler *h = (__bridge BBXAudioQueueBufferHandler *)inUserData;
+    BBXAudioQueueBufferManager *h = (__bridge BBXAudioQueueBufferManager *)inUserData;
     [h reuseAudioBuffer:inBuffer];
 }
 
-@interface BBXAudioQueueBufferHandler ()
+@interface BBXAudioQueueBufferManager ()
 
 @property AudioQueueBufferRef *buffers;
 @property NSRecursiveLock *buffersLock;
@@ -35,7 +35,7 @@ void bbxAudioQueueOutputCallback(void *inUserData, AudioQueueRef inAQ, AudioQueu
 
 @end
 
-@implementation BBXAudioQueueBufferHandler
+@implementation BBXAudioQueueBufferManager
 
 - (instancetype)init
 {

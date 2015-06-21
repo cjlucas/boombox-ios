@@ -31,7 +31,7 @@ int main(int argc, const char * argv[]) {
 //    
 //    Thing *t = [[Thing alloc] init];
 //    
-//    handler = [[BBXAudioQueueBufferHandler alloc] init];
+//    handler = [[BBXAudioQueueBufferManager alloc] init];
 //    BBXAudioHandler *h = [[BBXAudioFileStreamHandler alloc] init];
 //    h.delegate = t;
 //    
@@ -53,7 +53,7 @@ int main(int argc, const char * argv[]) {
 //        sleep(5);
 //    }
 
-    BBXAudioQueueManager *m = [[BBXAudioQueueManager alloc] init];
+    BBXAudioEngine *m = [[BBXAudioEngine alloc] init];
    
     [m queueAudioSource:fileSourceWithPath(argv[1])];
     [m queueAudioSource:fileSourceWithPath(argv[2])];

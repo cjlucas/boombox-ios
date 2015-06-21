@@ -23,7 +23,7 @@
 
 @interface BBXPlayer ()
 
-@property BBXAudioQueueManager *queueManager;
+@property BBXAudioEngine *queueManager;
 
 @end
 
@@ -36,7 +36,7 @@
         return nil;
     }
     
-    _queueManager = [[BBXAudioQueueManager alloc] init];
+    _queueManager = [[BBXAudioEngine alloc] init];
     _queueManager.delegate = self;
     _playlist = [[BBXPlaylist alloc] init];
     return self;
@@ -114,13 +114,13 @@
     }
 }
 
-#pragma mark - BBXAudioQueueManagerDelegate
+#pragma mark - BBXAudioEngineDelegate
 
-- (void)audioQueueManager:(BBXAudioQueueManager * __nonnull)manager didStartPlayingSource:(id<BBXAudioSource> __nonnull)source
+- (void)audioEngine:(BBXAudioEngine * __nonnull)manager didStartPlayingSource:(id<BBXAudioSource> __nonnull)source
 {
 }
 
-- (void)audioQueueManager:(BBXAudioQueueManager * __nonnull)manager didFinishPlayingSource:(id<BBXAudioSource> __nonnull)source
+- (void)audioEngine:(BBXAudioEngine * __nonnull)manager didFinishPlayingSource:(id<BBXAudioSource> __nonnull)source
 {
     NSLog(@"it finished playing!");
     [self.playlist next];

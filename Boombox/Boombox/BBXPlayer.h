@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-#import "BBXAudioQueueManager.h"
+#import "BBXAudioEngine.h"
 #import "BBXPlaylist.h"
 
-@interface BBXPlayer : NSObject <BBXAudioQueueManagerDelegate>
+@interface BBXPlayer : NSObject <BBXAudioEngineDelegate>
 
 @property (copy) BBXPlaylist *playlist;
 

@@ -1,5 +1,5 @@
 //
-//  BBXAudioQueueBufferHandler.h
+//  BBXAudioQueueBufferManager.h
 //  Boombox
 //
 //  Created by Christopher Lucas on 6/6/15.
@@ -11,7 +11,7 @@
 
 void bbxAudioQueueOutputCallback(void *inUserData, AudioQueueRef inAQ, AudioQueueBufferRef inBuffer);
 
-@interface BBXAudioQueueBufferHandler : NSObject
+@interface BBXAudioQueueBufferManager : NSObject
 
 - (void)allocateBuffersWithQueue:(AudioQueueRef)audioQueue numBuffers:(UInt32)numBuffers andBufferSize:(UInt32)bufferSize;
 
