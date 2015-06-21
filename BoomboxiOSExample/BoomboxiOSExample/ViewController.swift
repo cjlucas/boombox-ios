@@ -11,12 +11,18 @@ import UIKit
 import Boombox
 
 class ViewController: UIViewController {
-    private let boombox = BBXPlayer()
+    private var boombox : BBXPlayer {
+        get {
+            let appd = UIApplication.sharedApplication().delegate as! AppDelegate
+            return appd.player
+        }
+    }
     @IBOutlet weak var playPausedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +52,13 @@ class ViewController: UIViewController {
         default:
             println("never should happen")
         }
+    }
+    
+    @IBAction func nextButtonPressed(sender: AnyObject) {
+        boombox.next()
+    }
+    @IBAction func prevButtonPressed(sender: AnyObject) {
+        boombox.prev()
     }
 }
 

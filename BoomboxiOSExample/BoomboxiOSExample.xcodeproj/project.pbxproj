@@ -16,6 +16,7 @@
 		83470E111B350063008A8A9C /* Boombox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83470E101B350063008A8A9C /* Boombox.framework */; };
 		83470E151B35027B008A8A9C /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83470E131B35027B008A8A9C /* 1.mp3 */; };
 		83470E161B35027B008A8A9C /* 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83470E141B35027B008A8A9C /* 2.mp3 */; };
+		83E3B4FF1B3750F7003768F6 /* PlaylistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E3B4FE1B3750F7003768F6 /* PlaylistTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		83470E101B350063008A8A9C /* Boombox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Boombox.framework; path = "../../../Library/Developer/Xcode/DerivedData/Boombox-boibtqnyfgwsuhfgiogzbizcagxh/Build/Products/Debug/Boombox.framework"; sourceTree = "<group>"; };
 		83470E131B35027B008A8A9C /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 1.mp3; path = ../../../Downloads/1.mp3; sourceTree = "<group>"; };
 		83470E141B35027B008A8A9C /* 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 2.mp3; path = ../../../Downloads/2.mp3; sourceTree = "<group>"; };
+		83E3B4FE1B3750F7003768F6 /* PlaylistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				83470DF71B35004D008A8A9C /* Images.xcassets */,
 				83470DF91B35004D008A8A9C /* LaunchScreen.xib */,
 				83470DEE1B35004D008A8A9C /* Supporting Files */,
+				83E3B4FE1B3750F7003768F6 /* PlaylistTableViewController.swift */,
 			);
 			path = BoomboxiOSExample;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83470DF31B35004D008A8A9C /* ViewController.swift in Sources */,
+				83E3B4FF1B3750F7003768F6 /* PlaylistTableViewController.swift in Sources */,
 				83470DF11B35004D008A8A9C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +441,7 @@
 				83470E0C1B35004D008A8A9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83470E0D1B35004D008A8A9C /* Build configuration list for PBXNativeTarget "BoomboxiOSExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +450,7 @@
 				83470E0F1B35004D008A8A9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
