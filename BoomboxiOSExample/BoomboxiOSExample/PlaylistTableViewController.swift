@@ -6,8 +6,31 @@
 //  Copyright (c) 2015 Christopher Lucas. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
-class PlaylistTableViewController: UITableViewController {
+import Boombox
 
+class PlaylistTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    func player() -> BBXPlayer {
+        return (UIApplication.sharedApplication().delegate as! AppDelegate).player
+    }
+    
+    func playlistItem(indexPath: NSIndexPath) -> BBXPlaylistItem {
+        return player().playlist.items()[indexPath.row] as! BBXPlaylistItem;
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return player().playlist.items().count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+        cell.textLabel?.text = playlistItem(indexPath).url().lastPathComponent
+        return cell
+    }
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        player().playItem(playlistItem(indexPath))
+    }
 }
