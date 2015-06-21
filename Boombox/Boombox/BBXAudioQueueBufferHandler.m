@@ -66,6 +66,49 @@ void bbxAudioQueueOutputCallback(void *inUserData, AudioQueueRef inAQ, AudioQueu
     }
 }
 
+- (BOOL)enqueueBuffer:(AudioQueueBufferRef)queueBuf toQueue:(AudioQueueRef)audioQueue
+{
+    if (self.numPackets > 0 && self.packetDescs[0].mDataByteSize > 0 ) { // VBR
+        UInt32 numPackets = 0;
+        
+        for (int i = 0; i < self.numPackets; i++) {
+            AudioStreamPacketDescription *desc = &self.packetDescs[i];
+            
+            // If packet is too large to fit in buffer...
+            if (queueBuf->mAudioDataByteSize + desc->mDataByteSize > queueBuf->mAudioDataBytesCapacity) {
+                break;
+            }
+            
+            size_t bytesRead = vbuf_read(self.dataBuf, queueBuf->mAudioData + queueBuf->mAudioDataByteSize, desc->mDataByteSize);
+            desc->mStartOffset = queueBuf->mAudioDataByteSize;
+            queueBuf->mAudioDataByteSize += bytesRead;
+            numPackets++;
+        }
+        
+        if (numPackets == 0) {
+            return NO;
+        }
+        
+        NSLog(@"enqueued buffer of %d packets", numPackets);
+        OSStatus err;
+        if ((err = AudioQueueEnqueueBuffer(audioQueue, queueBuf, numPackets, self.packetDescs)) && err != 0) {
+            NSLog(@"AudioQueueEnqueueBuffer error");
+        }
+        
+        // Shift unqueued packets to front
+        for (int i = 0; i + numPackets < self.numPackets; i++) {
+            self.packetDescs[i] = self.packetDescs[i + numPackets];
+        }
+        self.numPackets -= numPackets;
+        
+    } else { // CBR
+        queueBuf->mAudioDataByteSize = (UInt32)vbuf_read(self.dataBuf, queueBuf->mAudioData, queueBuf->mAudioDataBytesCapacity);
+        AudioQueueEnqueueBuffer(audioQueue, queueBuf, 0, NULL);
+    }
+    
+    return YES;
+}
+
 - (BOOL)addDataToQueue:(AudioQueueRef)audioQueue bytes:(void *)bytes ofSize:(UInt32)numBytes withPacketDescriptions:(AudioStreamPacketDescription *)descs numPackets:(UInt32)numPackets;
 {
     vbuf_append(self.dataBuf, bytes, numBytes);
@@ -84,57 +127,29 @@ void bbxAudioQueueOutputCallback(void *inUserData, AudioQueueRef inAQ, AudioQueu
     
     self.numPackets += numPackets;
 
-    // bail if we can't/don't want to enqueue any buffer
+    // Wait until we have enough data to fill an entire buffer
     if (vbuf_size(self.dataBuf) < self.queueBufferCapacity) {
         return NO;
     }
     
     AudioQueueBufferRef queueBuf = [self getAvailableBuffer];
+    BOOL bufferEnqueued = [self enqueueBuffer:queueBuf toQueue:audioQueue];
     
-    if (self.numPackets > 0 && self.packetDescs[0].mDataByteSize > 0 ) { // VBR
-        UInt32 numPackets = 0;
-       
-        for (int i = 0; i < self.numPackets; i++) {
-            AudioStreamPacketDescription *desc = &self.packetDescs[i];
-            if (desc->mDataByteSize > vbuf_size(self.dataBuf)
-                || queueBuf->mAudioDataByteSize + desc->mDataByteSize > queueBuf->mAudioDataBytesCapacity) {
-                break;
-            }
-           
-            vbuf_read(self.dataBuf, queueBuf->mAudioData + queueBuf->mAudioDataByteSize, desc->mDataByteSize);
-            desc->mStartOffset = queueBuf->mAudioDataByteSize;
-            queueBuf->mAudioDataByteSize += desc->mDataByteSize;
-            numPackets++;
-        }
-        
-        if (numPackets == 0) {
-            [self reuseAudioBuffer:queueBuf];
-            return NO;
-        }
-
-        NSLog(@"enqueued buffer of %d packets", numPackets);
-        OSStatus err;
-        if ((err = AudioQueueEnqueueBuffer(audioQueue, queueBuf, numPackets, self.packetDescs)) && err != 0) {
-            NSLog(@"AudioQueueEnqueueBuffer error");
-        }
-        
-        // Shift descs of unqueued packets
-        for (int i = 0; i + numPackets < self.numPackets; i++) {
-            self.packetDescs[i] = self.packetDescs[i + numPackets];
-        }
-        self.numPackets -= numPackets;
-        
-    } else { // CBR
-        queueBuf->mAudioDataByteSize = (UInt32)vbuf_read(self.dataBuf, queueBuf->mAudioData, queueBuf->mAudioDataBytesCapacity);
-        AudioQueueEnqueueBuffer(audioQueue, queueBuf, 0, NULL);
+    if (!bufferEnqueued) {
+        [self reuseAudioBuffer:queueBuf];
     }
     
-    return YES;
+    return bufferEnqueued;
 }
 
 - (void)enqueueRemainingData:(AudioQueueRef)audioQueue
 {
-    // TODO: implement me
+    while (vbuf_size(self.dataBuf) > 0) {
+        AudioQueueBufferRef buf = [self getAvailableBuffer];
+        if (![self enqueueBuffer:buf toQueue:audioQueue]) {
+            [self reuseAudioBuffer:buf];
+        }
+    }
 }
 
 - (NSInteger)getAvailableBufferIndex
