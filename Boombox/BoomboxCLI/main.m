@@ -11,6 +11,20 @@
 
 bool playing = false;
 
+BBXFileAudioSource *fileSourceWithPath(const char *cpath)
+{
+    
+    NSString *fpath = [NSString stringWithUTF8String:cpath];
+    
+    BBXFileAudioSource *src = [[BBXFileAudioSource alloc] initWithURL:[NSURL fileURLWithPath:fpath]];
+    NSLog(@"%@", src);
+    if (src == nil) {
+        return nil;
+    }
+    
+    return src;
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
 //    NSLog(@"Hello, World!");
@@ -40,24 +54,11 @@ int main(int argc, const char * argv[]) {
 //    }
 
     BBXAudioQueueManager *m = [[BBXAudioQueueManager alloc] init];
-    
-    for (int i = 1; i < argc; i++) {
-        NSString *fpath = [NSString stringWithUTF8String:argv[i]];
-        NSLog(@"%@", fpath);
-        
-        
-        BBXFileAudioSource *src = [[BBXFileAudioSource alloc] initWithURL:[NSURL fileURLWithPath:fpath]];
-        NSLog(@"%@", src);
-        if (src == nil) {
-            return 1;
-        }
-        
-        [m addAudioSource:src];
-    }
-
+   
+    [m queueAudioSource:fileSourceWithPath(argv[1])];
+    [m queueAudioSource:fileSourceWithPath(argv[2])];
     
 //    while (true) { playing ? [m stop] : [m play]; playing = !playing; sleep(2); };
-    [m play];
     while (true) { sleep(5); }
     
     return 0;
