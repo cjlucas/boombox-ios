@@ -9,11 +9,17 @@
 #import <Foundation/Foundation.h>
 
 #import "BBXAudioQueueManager.h"
+#import "BBXPlaylist.h"
 
 @interface BBXPlayer : NSObject <BBXAudioQueueManagerDelegate>
 
-- (void)addURL:(NSURL *)url;
+@property (copy) BBXPlaylist *playlist;
+
+- (void)addURL:(NSURL *)url; // convenience
+- (void)addItem:(id <BBXPlaylistItem>)item;
 - (void)play;
+- (void)playItem:(id <BBXPlaylistItem>)item; // item must first be added
 - (void)pause;
 - (void)next;
+- (void)prev;
 @end

@@ -10,19 +10,21 @@
 
 @protocol BBXPlaylistItem
 
-- (NSURL *)url;
+- (NSURL * __nonnull)url;
 
 @end
 
 @interface BBXPlaylist : NSObject
 
-- (id <BBXPlaylistItem>)current;
-- (id <BBXPlaylistItem>)next;
-- (id <BBXPlaylistItem>)peekNext;
-- (id <BBXPlaylistItem>)prev;
-- (id <BBXPlaylistItem>)peekPrev;
+@property NSUInteger currentPlaylistIndex;
 
-- (void)addItem:(id <BBXPlaylistItem>)entry;
-- (NSArray *)playlist; // of id <BBXPlaylistItem>
+- (__nullable id <BBXPlaylistItem>)current;
+- (__nullable id <BBXPlaylistItem>)next;
+- (__nullable id <BBXPlaylistItem>)peekNext;
+- (__nullable id <BBXPlaylistItem>)prev;
+- (__nullable id <BBXPlaylistItem>)peekPrev;
+
+- (void)addItem:(__nonnull id <BBXPlaylistItem>)item;
+- (NSArray * __nonnull)items; // of id <BBXPlaylistItem>
 
 @end

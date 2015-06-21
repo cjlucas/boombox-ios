@@ -15,7 +15,7 @@
 		832F3DE51B2934F90097E9BB /* BBXFileAudioSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 832F3DE31B2934F90097E9BB /* BBXFileAudioSource.m */; };
 		832F3DE81B2937B10097E9BB /* BBXAudioQueueManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 832F3DE61B2937B10097E9BB /* BBXAudioQueueManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		832F3DE91B2937B10097E9BB /* BBXAudioQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 832F3DE71B2937B10097E9BB /* BBXAudioQueueManager.m */; };
-		83470E191B350615008A8A9C /* BBXPlaylist.h in Headers */ = {isa = PBXBuildFile; fileRef = 83470E171B350615008A8A9C /* BBXPlaylist.h */; };
+		83470E191B350615008A8A9C /* BBXPlaylist.h in Headers */ = {isa = PBXBuildFile; fileRef = 83470E171B350615008A8A9C /* BBXPlaylist.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83470E1A1B350615008A8A9C /* BBXPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 83470E181B350615008A8A9C /* BBXPlaylist.m */; };
 		83742B411B2373D000EEF9A3 /* Boombox.h in Headers */ = {isa = PBXBuildFile; fileRef = 83742B401B2373D000EEF9A3 /* Boombox.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83742B471B2373D000EEF9A3 /* Boombox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83742B3B1B2373D000EEF9A3 /* Boombox.framework */; };

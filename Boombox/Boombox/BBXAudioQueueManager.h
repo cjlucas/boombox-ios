@@ -13,17 +13,25 @@
 #import "BBXAudioSource.h"
 #import "BBXAudioHandler.h"
 
+typedef NS_ENUM(NSInteger, BBXAudioQueueState) {
+    BBXAudioQueueInitialized,
+    BBXAudioQueueStarted,
+    BBXAudioQueuePaused,
+};
+
 @protocol BBXAudioQueueManagerDelegate;
 
 @interface BBXAudioQueueManager : NSObject <BBXAudioHandlerDelegate>
 
+@property (readonly) __nullable id <BBXAudioSource> currentAudioSource;
+@property (readonly) BBXAudioQueueState audioQueueState;
 @property (weak) __nullable id <BBXAudioQueueManagerDelegate> delegate;
 
-- (void)addAudioSource:(__nonnull id <BBXAudioSource>)audioSource;
+- (void)queueAudioSource:(__nonnull id<BBXAudioSource>)source;
 - (void)play;
 - (void)pause;
-- (void)stop;
 - (void)reset;
+- (void)next;
 
 @end
 
@@ -31,5 +39,4 @@
 
 - (void)audioQueueManager:(BBXAudioQueueManager * __nonnull)manager didStartPlayingSource:(__nonnull id <BBXAudioSource>)source;
 - (void)audioQueueManager:(BBXAudioQueueManager * __nonnull)manager didFinishPlayingSource:(__nonnull id <BBXAudioSource>)source;
-- (void)audioQueueManagerDidStop:(BBXAudioQueueManager * __nonnull)manager;
 @end
