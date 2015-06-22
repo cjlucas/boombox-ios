@@ -31,6 +31,8 @@
 		83742B771B23784800EEF9A3 /* BBXRunLoopMessageQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 83742B751B23784800EEF9A3 /* BBXRunLoopMessageQueue.m */; };
 		83742B781B23784800EEF9A3 /* BBXRunLoopMessageQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 83742B751B23784800EEF9A3 /* BBXRunLoopMessageQueue.m */; };
 		83742B801B237DBC00EEF9A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83742B7F1B237DBC00EEF9A3 /* main.m */; };
+		83E3B5031B378087003768F6 /* BBXHTTPAudioSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E3B5011B378087003768F6 /* BBXHTTPAudioSource.h */; };
+		83E3B5041B378087003768F6 /* BBXHTTPAudioSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3B5021B378087003768F6 /* BBXHTTPAudioSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		83742B751B23784800EEF9A3 /* BBXRunLoopMessageQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXRunLoopMessageQueue.m; sourceTree = "<group>"; };
 		83742B7D1B237DBC00EEF9A3 /* BoomboxCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BoomboxCLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		83742B7F1B237DBC00EEF9A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		83E3B5011B378087003768F6 /* BBXHTTPAudioSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBXHTTPAudioSource.h; sourceTree = "<group>"; };
+		83E3B5021B378087003768F6 /* BBXHTTPAudioSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXHTTPAudioSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 		83742B3D1B2373D000EEF9A3 /* Boombox */ = {
 			isa = PBXGroup;
 			children = (
+				83E3B5001B37804A003768F6 /* Audio Sources */,
 				832F3DE61B2937B10097E9BB /* BBXAudioEngine.h */,
 				832F3DE71B2937B10097E9BB /* BBXAudioEngine.m */,
 				83742B5C1B23744600EEF9A3 /* BBXAudioHandler.h */,
@@ -162,9 +167,6 @@
 				83742B751B23784800EEF9A3 /* BBXRunLoopMessageQueue.m */,
 				832F3DD81B23D62E0097E9BB /* BBXAudioQueueBufferManager.h */,
 				832F3DD91B23D62E0097E9BB /* BBXAudioQueueBufferManager.m */,
-				832F3DE01B29333D0097E9BB /* BBXAudioSource.h */,
-				832F3DE21B2934F90097E9BB /* BBXFileAudioSource.h */,
-				832F3DE31B2934F90097E9BB /* BBXFileAudioSource.m */,
 				83470E171B350615008A8A9C /* BBXPlaylist.h */,
 				83470E181B350615008A8A9C /* BBXPlaylist.m */,
 				83742B3E1B2373D000EEF9A3 /* Supporting Files */,
@@ -206,6 +208,18 @@
 			path = BoomboxCLI;
 			sourceTree = "<group>";
 		};
+		83E3B5001B37804A003768F6 /* Audio Sources */ = {
+			isa = PBXGroup;
+			children = (
+				832F3DE01B29333D0097E9BB /* BBXAudioSource.h */,
+				832F3DE21B2934F90097E9BB /* BBXFileAudioSource.h */,
+				832F3DE31B2934F90097E9BB /* BBXFileAudioSource.m */,
+				83E3B5011B378087003768F6 /* BBXHTTPAudioSource.h */,
+				83E3B5021B378087003768F6 /* BBXHTTPAudioSource.m */,
+			);
+			name = "Audio Sources";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -214,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83742B681B23744600EEF9A3 /* BBXAudioFileStreamHandler.h in Headers */,
+				83E3B5031B378087003768F6 /* BBXHTTPAudioSource.h in Headers */,
 				83742B591B23740400EEF9A3 /* BBXPlayer.h in Headers */,
 				83742B651B23744600EEF9A3 /* BBXAudioHandler.h in Headers */,
 				832F3DDA1B23D62E0097E9BB /* BBXAudioQueueBufferManager.h in Headers */,
@@ -347,6 +362,7 @@
 			files = (
 				832F3DE51B2934F90097E9BB /* BBXFileAudioSource.m in Sources */,
 				832F3DDB1B23D62E0097E9BB /* BBXAudioQueueBufferManager.m in Sources */,
+				83E3B5041B378087003768F6 /* BBXHTTPAudioSource.m in Sources */,
 				83742B6E1B23744600EEF9A3 /* vbuf.c in Sources */,
 				83742B5A1B23740400EEF9A3 /* BBXPlayer.m in Sources */,
 				83742B691B23744600EEF9A3 /* BBXAudioFileStreamHandler.m in Sources */,

@@ -25,3 +25,4 @@ FOUNDATION_EXPORT const unsigned char BoomboxVersionString[];
 #import "BBXFileAudioSource.h"
 #import "BBXPlayer.h"
 #import "BBXPlaylist.h"
+#import "BBXHTTPAudioSource.h"
