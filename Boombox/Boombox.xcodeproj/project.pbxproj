@@ -31,7 +31,7 @@
 		83742B771B23784800EEF9A3 /* BBXRunLoopMessageQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 83742B751B23784800EEF9A3 /* BBXRunLoopMessageQueue.m */; };
 		83742B781B23784800EEF9A3 /* BBXRunLoopMessageQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 83742B751B23784800EEF9A3 /* BBXRunLoopMessageQueue.m */; };
 		83742B801B237DBC00EEF9A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83742B7F1B237DBC00EEF9A3 /* main.m */; };
-		83E3B5031B378087003768F6 /* BBXHTTPAudioSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E3B5011B378087003768F6 /* BBXHTTPAudioSource.h */; };
+		83E3B5031B378087003768F6 /* BBXHTTPAudioSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E3B5011B378087003768F6 /* BBXHTTPAudioSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83E3B5041B378087003768F6 /* BBXHTTPAudioSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3B5021B378087003768F6 /* BBXHTTPAudioSource.m */; };
 /* End PBXBuildFile section */
 
@@ -228,7 +228,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				83742B681B23744600EEF9A3 /* BBXAudioFileStreamHandler.h in Headers */,
-				83E3B5031B378087003768F6 /* BBXHTTPAudioSource.h in Headers */,
 				83742B591B23740400EEF9A3 /* BBXPlayer.h in Headers */,
 				83742B651B23744600EEF9A3 /* BBXAudioHandler.h in Headers */,
 				832F3DDA1B23D62E0097E9BB /* BBXAudioQueueBufferManager.h in Headers */,
@@ -238,6 +237,7 @@
 				832F3DE11B29333D0097E9BB /* BBXAudioSource.h in Headers */,
 				83742B701B23744600EEF9A3 /* vbuf.h in Headers */,
 				83470E191B350615008A8A9C /* BBXPlaylist.h in Headers */,
+				83E3B5031B378087003768F6 /* BBXHTTPAudioSource.h in Headers */,
 				83742B761B23784800EEF9A3 /* BBXRunLoopMessageQueue.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +310,7 @@
 				TargetAttributes = {
 					83742B3A1B2373D000EEF9A3 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 4HV5RKTAF4;
 					};
 					83742B451B2373D000EEF9A3 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -495,6 +496,7 @@
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -516,6 +518,7 @@
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -534,6 +537,7 @@
 		83742B551B2373D000EEF9A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application: Christopher Lucas (4HV5RKTAF4)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -552,6 +556,7 @@
 		83742B561B2373D000EEF9A3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application: Christopher Lucas (4HV5RKTAF4)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
