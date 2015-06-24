@@ -64,7 +64,7 @@ void audioFileHandlerPacketProc(void *inClientData, UInt32 numBytes, UInt32 numP
 
 - (void)dispose
 {
-    
+    AudioFileStreamClose(audioFileStreamId);
 }
 
 @end

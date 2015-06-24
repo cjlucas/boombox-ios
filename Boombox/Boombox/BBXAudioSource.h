@@ -10,8 +10,15 @@
 
 @protocol BBXAudioSource
 
+- (void)prepare;
 - (size_t)readData:(void *)buf ofSize:(size_t)bufSize;
 - (BOOL)reachedEndOfFile;
 - (void)close;
+
+@end
+
+@protocol BBXURLAudioSource <BBXAudioSource>
+
+- initWithURL:(NSURL *)url;
 
 @end

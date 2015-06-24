@@ -109,7 +109,6 @@
     [self.currentAudioSource close];
     [self.audioHandler dispose];
     
-
     [self startNextAudioSourceInQueue];
 }
 
@@ -147,10 +146,12 @@
                 AudioQueueStop(audioQueue, YES);
                 _audioQueueState = BBXAudioQueueInitialized;
                 
-                _currentAudioSource = nil;
-                
                 [self.audioHandler dispose];
                 self.audioHandler = nil;
+                
+                [self.currentAudioSource close];
+                _currentAudioSource = nil;
+               
                 [self.queueBufferManager flush];
                 break;
             case BBXAudioSourceQueued:
@@ -158,7 +159,7 @@
                     [self startNextAudioSourceInQueue];
                 }
                 break;
-            case BBXReachedEndOfAudioSource:
+            case BBXReachedEndOfAudioSource: // Deprecate me
                 [self.delegate audioEngine:self didFinishPlayingSource:self.currentAudioSource];
                 [self handleReachedEndOfAudioSource];
                 break;

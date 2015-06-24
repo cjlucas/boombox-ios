@@ -10,7 +10,7 @@
 
 #import "BBXAudioSource.h"
 
-@interface BBXFileAudioSource : NSObject <BBXAudioSource>
+@interface BBXFileAudioSource : NSObject <BBXURLAudioSource>
 
 - (instancetype)initWithURL:(NSURL *)url;
 
