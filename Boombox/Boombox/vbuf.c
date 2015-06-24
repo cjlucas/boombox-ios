@@ -16,6 +16,8 @@ void vbuf_init(vbuf_t *buf, size_t init_sz) {
 
 void vbuf_free(vbuf_t *buf) {
     free(buf->data);
+    buf->data = NULL;
+    buf->data_pos = NULL;
 }
 
 void vbuf_grow(vbuf_t *buf) {

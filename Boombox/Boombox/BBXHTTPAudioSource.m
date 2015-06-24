@@ -55,6 +55,7 @@
 - (void)close
 {
     [self.task cancel];
+    vbuf_free(&buf);
 }
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler

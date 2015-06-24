@@ -9,6 +9,7 @@
 #import "BBXPlayer.h"
 
 #import "BBXFileAudioSource.h"
+#import "BBXHTTPAudioSource.h"
 
 @interface NSURL (BBXPlaylistItem) <BBXPlaylistItem>
 @end
@@ -44,7 +45,15 @@
 
 - (id <BBXAudioSource>)audioSourceForPlaylistItem:(id <BBXPlaylistItem>)item
 {
-    return [[BBXFileAudioSource alloc] initWithURL:[item url]];
+    NSString *scheme = [item url].scheme;
+    if ([scheme isEqualToString:@"http"] || [scheme isEqualToString:@"https"]) {
+        return [[BBXHTTPAudioSource alloc] initWithURL:[item url]];
+    } else if ([scheme isEqualToString:@"file"]) {
+        return [[BBXFileAudioSource alloc] initWithURL:[item url]];
+    }
+    
+    [NSException raise:@"BBXUnknownSchemeError" format:@"Unknown scheme: %@", scheme];
+    return nil;
 }
 
 - (void)addURL:(NSURL *)url

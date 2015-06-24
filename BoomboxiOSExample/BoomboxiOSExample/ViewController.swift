@@ -32,13 +32,9 @@ class ViewController: UIViewController {
 
     @IBAction func addSourcesButtonPressed(sender: UIButton) {
         var bundle = NSBundle.mainBundle()
-        for s in ["1", "2"] {
-            println(s)
-            if let url = bundle.URLForResource(s, withExtension: "mp3") {
-                println("here")
-                boombox.addURL(url)
-                self.playPausedControl.setEnabled(true, forSegmentAtIndex: 0)
-            }
+        for s in ["https://archive.org/download/johnmayer2008-08-02.DPA4023.flac16/John_Mayer_2008-08-02_t04.mp3", "https://archive.org/download/johnmayer2008-08-02.DPA4023.flac16/John_Mayer_2008-08-02_t05.mp3"] {
+            boombox.addURL(NSURL(string: s))
+            self.playPausedControl.setEnabled(true, forSegmentAtIndex: 0)
         }
     }
 
