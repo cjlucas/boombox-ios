@@ -39,14 +39,14 @@ class ViewController: UIViewController {
     }
 
     @IBAction func playPauseControlChanged(sender: UISegmentedControl) {
-        println("rawr")
+        print("rawr")
         switch (sender.selectedSegmentIndex) {
         case 0:
             boombox.play()
         case 1:
             boombox.pause()
         default:
-            println("never should happen")
+            print("never should happen")
         }
     }
     
