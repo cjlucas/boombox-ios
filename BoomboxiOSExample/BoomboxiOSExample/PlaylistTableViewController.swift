@@ -10,7 +10,7 @@ import UIKit
 
 import Boombox
 
-class PlaylistTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class PlaylistTableViewController: UITableViewController {
     
     func player() -> BBXPlayer {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).player
@@ -25,9 +25,9 @@ class PlaylistTableViewController: UITableViewController, UITableViewDataSource,
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
-        cell.textLabel?.text = playlistItem(indexPath).url().lastPathComponent
-        return cell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell")
+        cell?.textLabel?.text = playlistItem(indexPath).url().lastPathComponent
+        return cell!
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
