@@ -8,17 +8,19 @@
 
 #import <FLACiOS/all.h>
 
-#import "AbsAudioHandler.h"
-#import "GrowableBuffer.h"
+#import "vbuf.h"
 
-@interface FLACStreamHandler : AbsAudioHandler {
+#import "BBXAudioHandler.h"
+
+@interface FLACStreamHandler : NSObject <BBXAudioHandler> {
     @public
     FLAC__StreamDecoder *decoder;
     vbuf_t flacBuffer;
-    vbuf_t pcmBuffer;
     pthread_mutex_t flacBufferLock;
     size_t bytesDecoded;
     size_t bytesRead;
 }
+
+@property (weak) id <BBXAudioHandlerDelegate> delegate;
 
 @end
