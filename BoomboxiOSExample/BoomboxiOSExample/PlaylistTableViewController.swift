@@ -13,24 +13,24 @@ import Boombox
 class PlaylistTableViewController: UITableViewController {
     
     func player() -> BBXPlayer {
-        return (UIApplication.sharedApplication().delegate as! AppDelegate).player
+        return (UIApplication.shared.delegate as! AppDelegate).player
     }
     
-    func playlistItem(indexPath: NSIndexPath) -> BBXPlaylistItem {
+    func playlistItem(_ indexPath: IndexPath) -> BBXPlaylistItem {
         return player().playlist.items()[indexPath.row] as! BBXPlaylistItem;
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return player().playlist.items().count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell")
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell")
         cell?.textLabel?.text = playlistItem(indexPath).url().lastPathComponent
         return cell!
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        player().playItem(playlistItem(indexPath))
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        player().play(playlistItem(indexPath))
     }
 }

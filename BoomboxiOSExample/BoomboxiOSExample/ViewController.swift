@@ -11,9 +11,9 @@ import UIKit
 import Boombox
 
 class ViewController: UIViewController {
-    private var boombox : BBXPlayer {
+    fileprivate var boombox : BBXPlayer {
         get {
-            let appd = UIApplication.sharedApplication().delegate as! AppDelegate
+            let appd = UIApplication.shared.delegate as! AppDelegate
             return appd.player
         }
     }
@@ -30,15 +30,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func addSourcesButtonPressed(sender: UIButton) {
-        var bundle = NSBundle.mainBundle()
-        for s in ["https://archive.org/download/johnmayer2008-08-02.DPA4023.flac16/John_Mayer_2008-08-02_t04.mp3", "https://archive.org/download/johnmayer2008-08-02.DPA4023.flac16/John_Mayer_2008-08-02_t05.mp3"] {
-            boombox.addURL(NSURL(string: s))
-            self.playPausedControl.setEnabled(true, forSegmentAtIndex: 0)
+    @IBAction func addSourcesButtonPressed(_ sender: UIButton) {
+        var bundle = Bundle.main
+        for s in ["http://media.cjlucas.net/01.flac"] {
+            boombox.add(URL(string: s))
+            self.playPausedControl.setEnabled(true, forSegmentAt: 0)
         }
     }
 
-    @IBAction func playPauseControlChanged(sender: UISegmentedControl) {
+    @IBAction func playPauseControlChanged(_ sender: UISegmentedControl) {
         print("rawr")
         switch (sender.selectedSegmentIndex) {
         case 0:
@@ -50,10 +50,10 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func nextButtonPressed(sender: AnyObject) {
+    @IBAction func nextButtonPressed(_ sender: AnyObject) {
         boombox.next()
     }
-    @IBAction func prevButtonPressed(sender: AnyObject) {
+    @IBAction func prevButtonPressed(_ sender: AnyObject) {
         boombox.prev()
     }
 }
