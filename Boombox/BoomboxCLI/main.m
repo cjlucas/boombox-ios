@@ -11,55 +11,20 @@
 
 bool playing = false;
 
-BBXFileAudioSource *fileSourceWithPath(const char *cpath)
-{
-    
-    NSString *fpath = [NSString stringWithUTF8String:cpath];
-    
-    BBXFileAudioSource *src = [[BBXFileAudioSource alloc] initWithURL:[NSURL fileURLWithPath:fpath]];
-    NSLog(@"%@", src);
-    if (src == nil) {
-        return nil;
-    }
-    
-    return src;
-}
-
 int main(int argc, const char * argv[]) {
     // insert code here...
-//    NSLog(@"Hello, World!");
-//    
-//    Thing *t = [[Thing alloc] init];
-//    
-//    handler = [[BBXAudioQueueBufferManager alloc] init];
-//    BBXAudioHandler *h = [[BBXAudioFileStreamHandler alloc] init];
-//    h.delegate = t;
-//    
-//    FILE *fp = fopen(argv[argc-1], "rb");
-//    if (fp == NULL) {
-//        return EXIT_FAILURE;
-//    }
-//    
-//    char buf[1 << 16];
-//    while (!feof(fp)) {
-//        size_t bytes_read = fread(buf, 1, 1 << 16, fp);
-//        if (bytes_read <= 0)break;
-//        [h feedData:buf ofSize:bytes_read];
-//    }
-//    
-//    NSLog(@"done reading");
-//    
-//    while (true) {
-//        sleep(5);
-//    }
-
-    BBXAudioEngine *m = [[BBXAudioEngine alloc] init];
-   
-    [m queueAudioSource:fileSourceWithPath(argv[1])];
-    [m queueAudioSource:fileSourceWithPath(argv[2])];
+    NSLog(@"Hello, World!");
+    
+    BBXPlayer *player = [[BBXPlayer alloc] init];
+    NSURL *url = [NSURL URLWithString:@"https://archive.org/download/johnmayer2008-08-02.DPA4023.flac16/John_Mayer_2008-08-02_t05.mp3"];
+    [player addURL:url];
+    [player play];
+    
+    playing = true;
+    
     
 //    while (true) { playing ? [m stop] : [m play]; playing = !playing; sleep(2); };
-    while (true) { sleep(5); }
+    while (playing) { sleep(5); }
     
     return 0;
 }
