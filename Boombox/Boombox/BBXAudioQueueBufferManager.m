@@ -103,7 +103,7 @@ void bbxAudioQueueOutputCallback(void *inUserData, AudioQueueRef inAQ, AudioQueu
         
     } else { // CBR
         queueBuf->mAudioDataByteSize = (UInt32)vbuf_read(self.dataBuf, queueBuf->mAudioData, queueBuf->mAudioDataBytesCapacity);
-        AudioQueueEnqueueBuffer(audioQueue, queueBuf, 0, NULL);
+        printf("enqueue buffer status = %d\n", AudioQueueEnqueueBuffer(audioQueue, queueBuf, 0, NULL));
     }
     
     return YES;

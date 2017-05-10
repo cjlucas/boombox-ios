@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8337212E1EC2960E00345F55 /* Boombox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8337212D1EC2960E00345F55 /* Boombox.framework */; };
+		833721301EC2961400345F55 /* Boombox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8337212D1EC2960E00345F55 /* Boombox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		833721311EC2963300345F55 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833721261EC2959900345F55 /* AudioToolbox.framework */; };
 		83470DF11B35004D008A8A9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83470DF01B35004D008A8A9C /* AppDelegate.swift */; };
 		83470DF31B35004D008A8A9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83470DF21B35004D008A8A9C /* ViewController.swift */; };
 		83470DF61B35004D008A8A9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83470DF41B35004D008A8A9C /* Main.storyboard */; };
 		83470DF81B35004D008A8A9C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83470DF71B35004D008A8A9C /* Images.xcassets */; };
 		83470DFB1B35004D008A8A9C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83470DF91B35004D008A8A9C /* LaunchScreen.xib */; };
 		83470E071B35004D008A8A9C /* BoomboxiOSExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83470E061B35004D008A8A9C /* BoomboxiOSExampleTests.swift */; };
-		83470E111B350063008A8A9C /* Boombox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83470E101B350063008A8A9C /* Boombox.framework */; };
-		83470E151B35027B008A8A9C /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83470E131B35027B008A8A9C /* 1.mp3 */; };
-		83470E161B35027B008A8A9C /* 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83470E141B35027B008A8A9C /* 2.mp3 */; };
 		83E3B4FF1B3750F7003768F6 /* PlaylistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E3B4FE1B3750F7003768F6 /* PlaylistTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +29,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8337212A1EC295CB00345F55 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				833721301EC2961400345F55 /* Boombox.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		833721241EC2959800345F55 /* BoomboxiOSExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BoomboxiOSExample.entitlements; sourceTree = "<group>"; };
+		833721261EC2959900345F55 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		8337212D1EC2960E00345F55 /* Boombox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Boombox.framework; path = "../../../Library/Developer/Xcode/DerivedData/Boombox-boibtqnyfgwsuhfgiogzbizcagxh/Build/Products/Debug-iphoneos/Boombox.framework"; sourceTree = "<group>"; };
 		83470DEB1B35004D008A8A9C /* BoomboxiOSExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoomboxiOSExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83470DEF1B35004D008A8A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83470DF01B35004D008A8A9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,8 +58,6 @@
 		83470E051B35004D008A8A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83470E061B35004D008A8A9C /* BoomboxiOSExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoomboxiOSExampleTests.swift; sourceTree = "<group>"; };
 		83470E101B350063008A8A9C /* Boombox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Boombox.framework; path = "../../../Library/Developer/Xcode/DerivedData/Boombox-boibtqnyfgwsuhfgiogzbizcagxh/Build/Products/Debug/Boombox.framework"; sourceTree = "<group>"; };
-		83470E131B35027B008A8A9C /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 1.mp3; path = ../../../Downloads/1.mp3; sourceTree = "<group>"; };
-		83470E141B35027B008A8A9C /* 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 2.mp3; path = ../../../Downloads/2.mp3; sourceTree = "<group>"; };
 		83E3B4FE1B3750F7003768F6 /* PlaylistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,7 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83470E111B350063008A8A9C /* Boombox.framework in Frameworks */,
+				833721311EC2963300345F55 /* AudioToolbox.framework in Frameworks */,
+				8337212E1EC2960E00345F55 /* Boombox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,14 +81,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		833721251EC2959900345F55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8337212D1EC2960E00345F55 /* Boombox.framework */,
+				833721261EC2959900345F55 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		83470DE21B35004D008A8A9C = {
 			isa = PBXGroup;
 			children = (
-				83470E121B35021F008A8A9C /* Resources */,
 				83470E101B350063008A8A9C /* Boombox.framework */,
 				83470DED1B35004D008A8A9C /* BoomboxiOSExample */,
 				83470E031B35004D008A8A9C /* BoomboxiOSExampleTests */,
 				83470DEC1B35004D008A8A9C /* Products */,
+				833721251EC2959900345F55 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +113,7 @@
 		83470DED1B35004D008A8A9C /* BoomboxiOSExample */ = {
 			isa = PBXGroup;
 			children = (
+				833721241EC2959800345F55 /* BoomboxiOSExample.entitlements */,
 				83470DF01B35004D008A8A9C /* AppDelegate.swift */,
 				83470DF21B35004D008A8A9C /* ViewController.swift */,
 				83470DF41B35004D008A8A9C /* Main.storyboard */,
@@ -124,15 +150,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		83470E121B35021F008A8A9C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				83470E131B35027B008A8A9C /* 1.mp3 */,
-				83470E141B35027B008A8A9C /* 2.mp3 */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +160,7 @@
 				83470DE71B35004D008A8A9C /* Sources */,
 				83470DE81B35004D008A8A9C /* Frameworks */,
 				83470DE91B35004D008A8A9C /* Resources */,
+				8337212A1EC295CB00345F55 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,9 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83470E151B35027B008A8A9C /* 1.mp3 in Resources */,
 				83470DF61B35004D008A8A9C /* Main.storyboard in Resources */,
-				83470E161B35027B008A8A9C /* 2.mp3 in Resources */,
 				83470DFB1B35004D008A8A9C /* LaunchScreen.xib in Resources */,
 				83470DF81B35004D008A8A9C /* Images.xcassets in Resources */,
 			);
@@ -378,6 +394,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BoomboxiOSExample/BoomboxiOSExample.entitlements;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Boombox-boibtqnyfgwsuhfgiogzbizcagxh/Build/Products/Debug",
@@ -394,6 +411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BoomboxiOSExample/BoomboxiOSExample.entitlements;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Boombox-boibtqnyfgwsuhfgiogzbizcagxh/Build/Products/Debug",

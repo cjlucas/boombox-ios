@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Christopher Lucas. All rights reserved.
 //
 
-#import <FLACiOS/all.h>
+#import <FLAC/all.h>
 
 #import "vbuf.h"
 

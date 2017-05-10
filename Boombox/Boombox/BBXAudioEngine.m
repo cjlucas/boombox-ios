@@ -9,6 +9,7 @@
 #import "BBXAudioEngine.h"
 
 #import "BBXAudioFileStreamHandler.h"
+#import "FLACStreamHandler.h"
 #import "BBXAudioQueueBufferManager.h"
 #import "BBXRunLoopMessageQueue.h"
 
@@ -55,6 +56,7 @@
 
 - (void)onAvailableData:(id <BBXAudioHandler>)handler data:(void *)bytes numBytes:(UInt32)numBytes numPacketDescs:(UInt32)numPacketDescs packetDescs:(AudioStreamPacketDescription *)packetDescs
 {
+    printf("GOT %u decoded bytes\n", numBytes);
     if ([self.queueBufferManager addDataToQueue:audioQueue bytes:bytes ofSize:numBytes withPacketDescriptions:packetDescs numPackets:numPacketDescs] && self.audioQueueState == BBXAudioQueueInitialized) {
         AudioQueueStart(audioQueue, NULL);
         _audioQueueState = BBXAudioQueueStarted;
@@ -74,7 +76,7 @@
         }
        
         _audioQueueState = BBXAudioQueueInitialized;
-        [self.queueBufferManager allocateBuffersWithQueue:audioQueue numBuffers:1 << 2 andBufferSize:1 << 14];
+        [self.queueBufferManager allocateBuffersWithQueue:audioQueue numBuffers:1 << 2 andBufferSize:1 << 16];
     });
 }
 
@@ -96,7 +98,8 @@
     } else {
         _currentAudioSource = [self.queuedSources objectAtIndex:0];
         [self.queuedSources removeObjectAtIndex:0];
-        self.audioHandler = [[BBXAudioFileStreamHandler alloc] initWithDelegate:self];
+        self.audioHandler = [[FLACStreamHandler alloc] initWithDelegate:self];
+//        self.audioHandler = [[BBXAudioFileStreamHandler alloc] initWithDelegate:self];
         [self.delegate audioEngine:self didStartPlayingSource:self.currentAudioSource];
     }
     
@@ -118,6 +121,8 @@
     if (self.audioQueueState == BBXAudioQueuePaused) {
         return;
     }
+    
+    assert(self.currentAudioSource != nil);
     
     size_t bytesRead = [self.currentAudioSource readData:audioSourceBuf ofSize:audioSourceBufSize];
     if (bytesRead > 0) {
